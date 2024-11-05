@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silico Battles</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://unpkg.com/gsap@3.11.5/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unlock">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="page1">
+        <div>
+            <video autoplay muted loop id="bg-video">
+                <source src="static/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div id="cursor"></div>
+
+        <header class="header">
+            <div class="logo">
+                <a href="/"><img src="static/silico_battles_logo.png" alt="Silico Battles Logo" id="icon" class="silicologo"></a>
+            </div>
+        </header>
+
+        <nav>
+            <button id="toggleButton" class="circle">
+                <div id="toggleButtonLine1"></div>
+                <div id="toggleButtonLine2"></div>
+            </button>
+            <ul class="menu">
+                <li><a href="/events">Events</a><span>&#9679;</span></li>
+                <li><a href="/team">The Backend</a><span>&#9679;</span></li>
+                <li><a href="/discord">Updates(discord)</a><span>&#9679;</span></li>
+                <li><a href="/brochure">Brochure</a><span>&#9679;</span></li>
+                <li><a href="/registeration">Registeration</a><span>&#9679;</span></li>
+            </ul>
+        </nav>
+
+        <div class="site-content">
+            <div class="info" id="info">
+                <h1>Silico</h1>
+                <h1>Battles</h1>
+                <p>A Souvenir Club Production</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="social-links">
+                <a href="instagram"><i class="fa fa-instagram" id="icon" style="font-size:55px;color:red"></i></a>
+                <a href="/discord"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="40" fill="currentColor" class="bi bi-discord" id="icon" viewBox="0 0 16 16">
+                    <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path>
+                </svg></a>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="static/script.js"></script>
+    <script>
+        window.addEventListener('mousemove', function(e) {
+            var arr = [1, 0.9, 0.8, 0.5, 0.2];
+
+            arr.forEach(function(i) {
+                var x = (1 - i) * 75;
+                var star = document.createElement('div');
+
+                star.className = 'star';
+                star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+                star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+
+                document.body.appendChild(star);
+
+                window.setTimeout(function() {
+                    document.body.removeChild(star);
+                }, Math.round(Math.random() * i * 600));
+            });
+        }, false);
+    </script>
+</body>
+</html>
