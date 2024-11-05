@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "run.py",  // Main file to run your Flask app
+      "src": "app.py",  // Main file to run your Flask app
       "use": "@vercel/python"  // Specify using the Python runtime
     }
   ],
@@ -13,7 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "run.py"  // Route all other requests to the main Flask file
+      "dest": "app.py"  // Route all other requests to the main Flask file
     }
   ],
   "env": {
