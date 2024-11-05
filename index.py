@@ -29,3 +29,6 @@ def team():
 @app.route('/message')
 def message():
     return render_template('message.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
