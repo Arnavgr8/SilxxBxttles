@@ -2,23 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py",  // Main file to run your Flask app
-      "use": "@vercel/python"  // Specify using the Python runtime
+      "src": "api/index.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/favicon.ico",
-      "dest": "/static/favicon.ico"  // Route for serving the favicon
-    },
-    {
       "src": "/(.*)",
-      "dest": "app.py"  // Route all other requests to the main Flask file
+      "dest": "api/index.py"
     }
-  ],
-  "env": {
-    // Here you can add environment variables if needed
-    // For example:
-    // "SECRET_KEY": "your_secret_key"
-  }
+  ]
 }
