@@ -47,7 +47,7 @@ teamMembers.forEach((member) => {
     });
 });
 
-
+// Navigation Toggle
 const nav = document.querySelector("nav");
 const toggleButton = document.querySelector("#toggleButton");
 const navMenu = document.querySelector(".menu");
@@ -56,8 +56,9 @@ const toggleButtonLine2 = document.querySelector("#toggleButtonLine2");
 
 let isToggled = false;
 toggleButton.addEventListener("click", function () {
-    if (isToggled === false) {
-        isToggled = true;
+    isToggled = !isToggled; // Toggle state
+
+    if (isToggled) {
         gsap.to(nav, {
             duration: 0.3,
             width: "25rem",
@@ -92,7 +93,6 @@ toggleButton.addEventListener("click", function () {
             ease: "power2.inOut",
         });
     } else {
-        isToggled = false;
         gsap.to(nav, {
             duration: 0.3,
             width: "5rem",
@@ -129,10 +129,10 @@ toggleButton.addEventListener("click", function () {
     }
 });
 
+// Close the navigation if clicked outside
 document.addEventListener("click", (event) => {
     const targetElement = event.target;
 
-    // Close the navigation if clicked outside
     if (isToggled && !nav.contains(targetElement) && !toggleButton.contains(targetElement)) {
         isToggled = false;
         gsap.to(nav, {
