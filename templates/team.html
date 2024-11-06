@@ -16,11 +16,13 @@
     <div id="cursor"></div>
     <header class="header">
         <a href="/" class="logo">
-            <img src="static\silico_battles_logo.png" alt="Silico Logo" class="silicologo">
+            <button class="logo-button">
+                <img src="static/silico_battles_logo.png" alt="Silico Logo" class="silicologo">
+            </button>
         </a>
     </header>
     
-    </div>
+    
     <nav>
         <button id="toggleButton" class="circle">
             <div id="toggleButtonLine1"></div>
@@ -41,7 +43,6 @@
     <div class="video-background">
         <video class="background-video" autoplay muted loop>
             <source src="https://res.cloudinary.com/dudexihda/video/upload/v1730880259/team_eqkxbr.mp4" type="video/mp4">
-            <!-- Fallback content in case the video is not supported -->
             Your browser does not support the video tag.
         </video>
     </div>
@@ -53,14 +54,13 @@
             <h2>Our Mission</h2>
             <p>Empowering the future of tech since 2004. At Souvenir Club, our aim is to provide the ultimate platform for showcasing the skills and talents of young students. We are committed to nurturing creativity and innovation among our participants. Through latest tools, we give students a chance to shine and succeed in their endeavors.</p>
         </div>
-    </br>
-</br>
-</br>
+
         <div class="Our Team"></div>
+        
         <!-- Row 1: 2 Members -->
         <div class="row" id="row1">
             <div class="team-member" id="team-member1">
-                <img src="static\pfps\ashvathi.png" alt="Member 1">
+                <img src="static/pfps/ashvathi.png" alt="Member 1">
                 <h3>Ashvathi Kurup</h3>
                 <h5>President</h5>
             </div>
@@ -126,32 +126,12 @@
         <div class="w3-xsmall w3-section">
             <a href="/instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
             <a href="/discord"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
-                <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path>
-              </svg></a>
+                <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.016-.019.039.039 0 0 0-.019-.018z" />
+                </svg>
+            </a>
         </div>
-        <p>Powered by Souvenir CLub.</p>
     </footer>
-    <script src="static/team.js"></script>
-    <script>
-        window.addEventListener('mousemove', function(e) {
-            var arr = [1, 0.9, 0.8, 0.5, 0.2];
-
-            arr.forEach(function(i) {
-                var x = (1 - i) * 75;
-                var star = document.createElement('div');
-
-                star.className = 'star';
-                star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
-                star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
-
-                document.body.appendChild(star);
-
-                window.setTimeout(function() {
-                    document.body.removeChild(star);
-                }, Math.round(Math.random() * i * 600));
-            });
-        }, false);
-    </script>
+    <script src="static/menu.js"></script>
 </body>
 
 </html>
