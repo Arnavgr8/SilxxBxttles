@@ -1,120 +1,167 @@
-/* Ensure the body and main content can scroll */
-body,
-html {
-    cursor: none;
-    height: 100%;
+/* Reset body margins and set full-height background */
+body, html {
+    cursor : none;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    height: 100%;
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
-/* Video background should cover the entire viewport */
-.video-background {
+/* Fullscreen background image */
+.img-background {
+    cursor : none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the whole screen */
+            z-index: -1;  /* Put image behind other content */
+        }
+
+/* Content wrapper styling */
+.message-wrapper {
+    cursor : none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+}
+
+/* Title style */
+.title {
+    cursor : none;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Message text style */
+.message {
+    cursor : none;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 1000;
+    color: #f8f8f8;
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .message-wrapper {
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-wrapper {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .message {
+        font-size: 0.875rem;
+    }
+}
+
+#cursor {
+    background-color: red;
+    opacity: 0.5 ;
+    position: fixed;
+    width: 15px; /* Size of the cursor */
+    height: 15px; /* Size of the cursor */
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interaction */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    z-index: 1000; /* Above other elements */
+}
+
+
+.star {
+	position: fixed;
+	pointer-events: none;
+}
+
+.star:before, .star:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '\2726';
+	font-size: 9px;
+}
+
+.star:before {
+	color: transparent;
+	text-shadow: 
+		0 0 5px rgba(255, 0, 0, 0.7), /* Glow effect */
+		0 0 10px rgb(255, 0, 0); /* Stronger glow */
+}
+
+.star:after {
+	background: linear-gradient(45deg,  rgba(255, 0, 242, 0.5),  rgba(255, 0, 225, 0.5));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 
+		0 0 5px  rgba(255, 0, 166, 0.5), /* Glow effect */
+		0 0 10px rgb(255, 0, 0) /* Stronger glow */
+}
+
+
+.header {
     cursor: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover; /* Ensure the video covers the full screen */
+    top: 3vw;
+    left: 3vw;
+    z-index: 2;
 }
 
-/* Main content */
-main.team-container {
+.logo {
     cursor: none;
-    padding: 60px 20px;
-    z-index: 1;
-    position: relative;
+    width: 5rem; /* Set similar dimensions to nav button */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
 }
 
-/* Flex layout for rows */
-.row {
+.logo a {
     cursor: none;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 5px;
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    justify-content: space-evenly; /* Distribute items evenly */
 }
 
-/* Team member box styling */
-.team-member {
+.silicologo {
     cursor: none;
-    opacity: 0.7;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 200px;
-    padding: 20px;
-    transition: transform 0.3s ease;
-    margin: 10px; /* Adds spacing between team members */
-}
-
-.team-member:hover {
-    cursor: none;
-    background-color: #000;
-    color: white;
-    opacity: 1;
-    transform: translateY(-10px);
-}
-
-.team-member img {
-    cursor: none;
-    width: 100%;
+    width: 3rem; /* Adjust logo size inside the container */
     height: auto;
-    border-radius: 8px;
 }
 
-.team-member h3 {
-    cursor: none;
-    margin-top: 10px;
-    font-size: 1.25rem;
-}
 
-.team-member h5 {
-    cursor: none;
-    color: #777;
-    font-size: 1.1rem;
-    margin-top: 10px; /* Adds space between the name and post */
-}
 
-/* Footer */
-footer {
-    cursor: none;
-    background-color: #000;
-    color: white;
-    padding: 32px 0;
-    text-align: center;
-}
-
-footer .w3-xlarge {
-    cursor: none;
-    margin-bottom: 16px;
-}
-
-footer .w3-button {
-    cursor: none;
-    margin-top: 16px;
-}
-
-footer .w3-hover-opacity {
-    cursor: none;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-footer .w3-hover-opacity:hover {
-    cursor: none;
-    opacity: 1;
-}
-
-/* Navigation Button */
 nav {
-    cursor: none;
+    cursor : none;
     height: 5rem;
     width: 5rem;
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent white */
@@ -129,14 +176,15 @@ nav {
     opacity: 0.6;
 }
 
+
 nav button {
-    cursor: none;
+    cursor : none;
     height: 5rem;
     width: 5rem;
     border-radius: 5rem;
     border: 0;
     outline: 0;
-    background-color: rgb(255, 111, 0);
+    background-color: rgba(0, 255, 247, 0.5);
     position: absolute;
     top: 0;
     right: 0;
@@ -144,7 +192,7 @@ nav button {
 
 nav button #toggleButtonLine1,
 nav button #toggleButtonLine2 {
-    cursor: none;
+    cursor : none;
     content: "";
     border: 1px solid black;
     width: 50%;
@@ -154,19 +202,19 @@ nav button #toggleButtonLine2 {
 }
 
 nav button #toggleButtonLine1 {
-    cursor: none;
+    cursor : none;
     top: 42.5%;
     left: 50%;
 }
 
 nav button #toggleButtonLine2 {
-    cursor: none;
+    cursor : none;
     top: 57.5%;
     left: 50%;
 }
 
 nav ul {
-    cursor: none;
+    cursor : none;
     height: 100%;
     width: 100%;
     display: flex;
@@ -180,7 +228,7 @@ nav ul {
 }
 
 nav ul li {
-    cursor: none;
+    cursor : none;
     width: 80%;
     font-size: 2rem;
     font-weight: 500;
@@ -192,200 +240,85 @@ nav ul li {
 }
 
 nav ul li span {
-    cursor: none;
+    cursor : none;
     display: inline-block;
     scale: 0;
     transition: all 200ms ease;
 }
 
 nav ul li a {
-    cursor: none;
+    cursor : none;
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
 }
 
 nav ul li:hover {
-    cursor: none;
+    cursor : none;
     font-weight: 1000;
 }
 
 nav ul li:hover span {
-    cursor: none;
+    cursor : none;
     scale: 1;
 }
 
-/* Custom Cursor */
-#cursor {
-    background-color: red;
-    opacity: 0.5;
-    position: fixed;
-    width: 15px; /* Size of the cursor */
-    height: 15px; /* Size of the cursor */
-    border-radius: 50%;
-    pointer-events: none; /* Prevent interaction */
-    transition: background-color 0.3s ease; /* Smooth color transition */
-    z-index: 1000; /* Above other elements */
-}
-
-/* Body Background */
-body {
-    background-color: #2e3537; /* Dark background */
-}
-
-/* Sparkles (Star Effect) */
-.star {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998; /* Ensure stars are behind the cursor */
-}
-
-.star:before,
-.star:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '\2726'; /* Unicode character for star */
-    font-size: 9px;
-    z-index: 9998; /* Ensure stars are behind the cursor */
-}
-
-.star:before {
-    color: transparent;
-    text-shadow:
-        0 0 5px rgba(255, 0, 0, 0.7), /* Glow effect */
-        0 0 10px rgb(255, 0, 0); /* Stronger glow */
-}
-
-.star:after {
-    background: linear-gradient(45deg, rgba(255, 0, 242, 0.5), rgba(255, 0, 225, 0.5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 5px rgba(255, 0, 166, 0.5), /* Glow effect */
-        0 0 10px rgb(255, 0, 0); /* Stronger glow */
-}
-
-/* Responsive Styling for smaller screens */
-
-/* Tablet screens (768px and below) */
 @media (max-width: 768px) {
-    .row {
-        gap: 15px; /* Slightly larger gap on tablet screens */
+    /* Adjust nav button size and position */
+    nav {
+        height: 4rem;
+        width: 4rem;
+        top: 2vw;
+        right: 2vw;
+        opacity: 0.9;
+        border-radius: 3rem;
+        background-color: transparent;
+        box-shadow: none; /* Remove shadow */
+    }
+    
+    /* Adjust button and lines inside nav for smaller screens */
+    nav button {
+        height: 4rem;
+        width: 4rem;
+        border: none; /* Remove border */
+        box-shadow: none; /* Remove shadow */
     }
 
-    .team-member {
-        width: 90%;
-        padding: 20px;
-        margin: 15px 0;
+    nav button #toggleButtonLine1,
+    nav button #toggleButtonLine2 {
+        width: 60%;
     }
 
-    .team-member h3 {
-        font-size: 1.125rem;
+    /* Adjust menu overlay to avoid covering the entire screen */
+    nav ul {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 15%; /* Position slightly below the top */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%; /* Width of the nav menu */
+        height: auto; /* Auto height to fit content */
+        max-height: 60vh; /* Limit height */
+        background-color: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+        border-radius: 10px; /* Optional: Rounded corners */
+        z-index: 3;
+        transition: opacity 0.3s ease;
     }
 
-    .team-member p {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        padding: 24px 0;
-    }
-
-    footer .w3-xlarge {
-        font-size: 1.5rem;
-    }
-
+    /* Adjust font size for menu items */
     nav ul li {
-        font-size: 1.5rem;
+        font-size: 1.2rem; /* Smaller font for mobile */
     }
 
-    nav ul li span {
-        display: none;
+    /* Adjust padding for logo and other elements */
+    .logo {
+        width: 4rem;
+        height: 4rem;
     }
-}
-
-/* Mobile screens (480px and below) */
-@media (max-width: 480px) {
-    .row {
-        gap: 10px;
-    }
-
-    .team-member {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .team-member h3 {
-        font-size: 1rem;
-    }
-
-    .team-member p {
-        font-size: 0.875rem;
-    }
-
-    nav ul li {
-        font-size: 1.25rem;
-    }
-
-    footer .w3-xlarge {
-        font-size: 1.2rem;
-    }
-}
-
-/* About Section Styles */
-.about {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #000000;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    opacity: 1; /* Initially hidden for animation */
-    transform: translateY(50px); /* Slide from below */
-}
-
-/* About Text Styling */
-.about h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 30px;
-}
-
-.about p {
-    font-size: 1.2rem;
-    color: white;
-    margin-bottom: 20px;
-}
-
-
-/* Logo Button positioned opposite to the nav button (top-left) */
-.header {
-    position: fixed;
-    top: 3vw;
-    left: 3vw;
-    z-index: 2;
-}
-
-.logo-button {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    position: relative;
-}
-
-.silicologo {
-    cursor: none;
-    height: 5rem;
-    width: 5rem;
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.logo-button:hover .silicologo {
-    opacity: 1;
 }
