@@ -391,7 +391,7 @@ body {
 
 
 /* Header Logo as Overlay Button */
-.header {
+header {
     cursor: none;
     position: fixed;
     top: 3vw;
