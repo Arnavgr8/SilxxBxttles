@@ -380,12 +380,15 @@ body {
 }
 
 .logo a {
+    width: 5rem; /* Set similar dimensions to nav button */
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .silicologo {
-    width: 3rem; /* Adjust logo size inside the container */
+    width: 5rem; /* Set similar dimensions to nav button */
+    height: 5rem;
     height: auto;
 }
