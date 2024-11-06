@@ -1,137 +1,391 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Ensure the body and main content can scroll */
+body,
+html {
+    cursor: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Backend</title>
-    <link rel="stylesheet" href="static/team.css"> <!-- External CSS -->
-    <script src="https://unpkg.com/gsap@3.11.5/dist/gsap.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unlock">
-</head>
+/* Video background should cover the entire viewport */
+.video-background {
+    cursor: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover; /* Ensure the video covers the full screen */
+}
 
-<body>
-    <div id="cursor"></div>
-    <header class="header">
-        <a href="/" class="logo">
-            <button class="logo-button">
-                <img src="static/silico_battles_logo.png" alt="Silico Logo" class="silicologo">
-            </button>
-        </a>
-    </header>
-    
-    
-    <nav>
-        <button id="toggleButton" class="circle">
-            <div id="toggleButtonLine1"></div>
-            <div id="toggleButtonLine2"></div>
-        </button>
-        <ul class="menu">
-            <li><a href="/">Home</a><span>&#9679;</span></li>
-            <li><a href="/events">Event</a><span>&#9679;</span></li>
-            <li><a href="/team">The Backend</a><span>&#9679;</span></li>
-            <li><a href="/discord">Updates(discord)</a><span>&#9679;</span></li>
-            <li><a href="/brochure">Brochure</a><span>&#9679;</span></li>
-            <li><a href="/registeration">Registeration</a><span>&#9679;</span></li>
-            <li><a href="/message">Message From Prinicpal</a><span>&#9679;</span></li>
-        </ul>
-    </nav>
+/* Main content */
+main.team-container {
+    cursor: none;
+    padding: 60px 20px;
+    z-index: 1;
+    position: relative;
+}
 
-    <!-- Video Background -->
-    <div class="video-background">
-        <video class="background-video" autoplay muted loop>
-            <source src="https://res.cloudinary.com/dudexihda/video/upload/v1730880259/team_eqkxbr.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+/* Flex layout for rows */
+.row {
+    cursor: none;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-evenly; /* Distribute items evenly */
+}
 
-    <!-- Main Content (Team Members) -->
-    <main class="team-container">
-        <div class="about">
-            <h1>Celebrating Two Decades Of the </br> Silico Battles!</h1>
-            <h2>Our Mission</h2>
-            <p>Empowering the future of tech since 2004. At Souvenir Club, our aim is to provide the ultimate platform for showcasing the skills and talents of young students. We are committed to nurturing creativity and innovation among our participants. Through latest tools, we give students a chance to shine and succeed in their endeavors.</p>
-        </div>
+/* Team member box styling */
+.team-member {
+    cursor: none;
+    opacity: 0.7;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    margin: 10px; /* Adds spacing between team members */
+}
 
-        <div class="Our Team"></div>
-        
-        <!-- Row 1: 2 Members -->
-        <div class="row" id="row1">
-            <div class="team-member" id="team-member1">
-                <img src="static/pfps/ashvathi.png" alt="Member 1">
-                <h3>Ashvathi Kurup</h3>
-                <h5>President</h5>
-            </div>
-            <div class="team-member" id="team-member2">
-                <img src="static/pfps/adhyan.png" alt="Member 2">
-                <h3>Adhyan Gupta</h3>
-                <h5>Vice-President</h5>
-            </div>
-        </div>
+.team-member:hover {
+    cursor: none;
+    background-color: #000;
+    color: white;
+    opacity: 1;
+    transform: translateY(-10px);
+}
 
-        <!-- Row 2: 4 Members -->
-        <div class="row">
-            <div class="team-member" id="team-member3">
-                <img src="static/pfps/tanush.png" alt="Member 3">
-                <h3>Tanush Singh</h3>
-                <h5>Head VFX</h5>
-            </div>
-            <div class="team-member" id="team-member4">
-                <img src="static/pfps/aditya.png" alt="Member 4">
-                <h3>Aditya Gupta</h3>
-                <h5>Head GFX</h5>
-            </div>
-            <div class="team-member" id="team-member5">
-                <img src="static/pfps/namish.png" alt="Member 5">
-                <h3>Namish Pande</h3>
-                <h5>Head Systems</h5>
-            </div>
-            <div class="team-member" id="team-member6">
-                <img src="static/pfps/arush.png" alt="Member 6">
-                <h3>Arush Poddar</h3>
-                <h5>Head Webs & Networks</h5>
-            </div>
-        </div>
+.team-member img {
+    cursor: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
-        <!-- Row 3: 4 Members -->
-        <div class="row">
-            <div class="team-member" id="team-member7">
-                <img src="static/pfps/arnav.png" alt="Member 7">
-                <h3>Arnav Malhotra</h3>
-                <h5>Web Coordinaror</h5>
-            </div>
-            <div class="team-member" id="team-member8">
-                <img src="static/pfps/arjun.png" alt="Member 8">
-                <h3>Arjun Gotan</h3>
-                <h5>Network Coordinator</h5>
-            </div>
-            <div class="team-member" id="team-member9">
-                <img src="static/pfps/aryan.png" alt="Member 9">
-                <h3>Aryan Mishra</h3>
-                <h5>VFX Coordinator</h5>
-            </div>
-            <div class="team-member" id="team-member10">
-                <img src="static/pfps/charvi.png" alt="Member 10">
-                <h3>Charvi Jain</h3>
-                <h5>GFX Coordinator</h5>
-            </div>
-        </div>
-    </main>
+.team-member h3 {
+    cursor: none;
+    margin-top: 10px;
+    font-size: 1.25rem;
+}
 
-    <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-        <a href="/team" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-        <div class="w3-xsmall w3-section">
-            <a href="/instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-            <a href="/discord"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
-                <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.016-.019.039.039 0 0 0-.019-.018z" />
-                </svg>
-            </a>
-        </div>
-    </footer>
-    <script src="static/menu.js"></script>
-</body>
+.team-member h5 {
+    cursor: none;
+    color: #777;
+    font-size: 1.1rem;
+    margin-top: 10px; /* Adds space between the name and post */
+}
 
-</html>
+/* Footer */
+footer {
+    cursor: none;
+    background-color: #000;
+    color: white;
+    padding: 32px 0;
+    text-align: center;
+}
+
+footer .w3-xlarge {
+    cursor: none;
+    margin-bottom: 16px;
+}
+
+footer .w3-button {
+    cursor: none;
+    margin-top: 16px;
+}
+
+footer .w3-hover-opacity {
+    cursor: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+footer .w3-hover-opacity:hover {
+    cursor: none;
+    opacity: 1;
+}
+
+/* Navigation Button */
+nav {
+    cursor: none;
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent white */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5rem;
+    position: fixed;
+    top: 3vw;
+    right: 3vw;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.6;
+}
+
+nav button {
+    cursor: none;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 5rem;
+    border: 0;
+    outline: 0;
+    background-color: rgb(255, 111, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav button #toggleButtonLine1,
+nav button #toggleButtonLine2 {
+    cursor: none;
+    content: "";
+    border: 1px solid black;
+    width: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+}
+
+nav button #toggleButtonLine1 {
+    cursor: none;
+    top: 42.5%;
+    left: 50%;
+}
+
+nav button #toggleButtonLine2 {
+    cursor: none;
+    top: 57.5%;
+    left: 50%;
+}
+
+nav ul {
+    cursor: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2vh;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav ul li {
+    cursor: none;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Unlock";
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li span {
+    cursor: none;
+    display: inline-block;
+    scale: 0;
+    transition: all 200ms ease;
+}
+
+nav ul li a {
+    cursor: none;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    cursor: none;
+    font-weight: 1000;
+}
+
+nav ul li:hover span {
+    cursor: none;
+    scale: 1;
+}
+
+/* Custom Cursor */
+#cursor {
+    background-color: red;
+    opacity: 0.5;
+    position: fixed;
+    width: 15px; /* Size of the cursor */
+    height: 15px; /* Size of the cursor */
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interaction */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    z-index: 1000; /* Above other elements */
+}
+
+/* Body Background */
+body {
+    background-color: #2e3537; /* Dark background */
+}
+
+/* Sparkles (Star Effect) */
+.star {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998; /* Ensure stars are behind the cursor */
+}
+
+.star:before,
+.star:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '\2726'; /* Unicode character for star */
+    font-size: 9px;
+    z-index: 9998; /* Ensure stars are behind the cursor */
+}
+
+.star:before {
+    color: transparent;
+    text-shadow:
+        0 0 5px rgba(255, 0, 0, 0.7), /* Glow effect */
+        0 0 10px rgb(255, 0, 0); /* Stronger glow */
+}
+
+.star:after {
+    background: linear-gradient(45deg, rgba(255, 0, 242, 0.5), rgba(255, 0, 225, 0.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 5px rgba(255, 0, 166, 0.5), /* Glow effect */
+        0 0 10px rgb(255, 0, 0); /* Stronger glow */
+}
+
+/* Responsive Styling for smaller screens */
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+    .row {
+        gap: 15px; /* Slightly larger gap on tablet screens */
+    }
+
+    .team-member {
+        width: 90%;
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .team-member h3 {
+        font-size: 1.125rem;
+    }
+
+    .team-member p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 24px 0;
+    }
+
+    footer .w3-xlarge {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        font-size: 1.5rem;
+    }
+
+    nav ul li span {
+        display: none;
+    }
+}
+
+/* Mobile screens (480px and below) */
+@media (max-width: 480px) {
+    .row {
+        gap: 10px;
+    }
+
+    .team-member {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .team-member h3 {
+        font-size: 1rem;
+    }
+
+    .team-member p {
+        font-size: 0.875rem;
+    }
+
+    nav ul li {
+        font-size: 1.25rem;
+    }
+
+    footer .w3-xlarge {
+        font-size: 1.2rem;
+    }
+}
+
+/* About Section Styles */
+.about {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #000000;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Initially hidden for animation */
+    transform: translateY(50px); /* Slide from below */
+}
+
+/* About Text Styling */
+.about h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+
+.header {
+    position: fixed;
+    top: 3vw;
+    left: 3vw;
+    z-index: 2;
+}
+
+.logo {
+    width: 5rem; /* Set similar dimensions to nav button */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.silicologo {
+    width: 3rem; /* Adjust logo size inside the container */
+    height: auto;
+}
