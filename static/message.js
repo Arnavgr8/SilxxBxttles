@@ -1,8 +1,73 @@
-document.addEventListener("DOMContentLoaded", () => {
-    gsap.from(".message-wrapper", {
-        opacity: 0,
-        y: 100,  // Start with slight downward shift
-        duration: 2,  // Time for animation
-        ease: "power2.out",  // Easing function for smooth effect
-    });
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal's Message | Ahlcon Public School</title>
+    <link rel="stylesheet" href="static/message.css">
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Fullscreen background image -->
+        <div>
+		<img src="static/space2.jpg" alt="Embedded Image" class="img-background">
+	
+        <div id="cursor"></div>
+
+        <header class="header">
+            <div class="logo">
+                <a href="/"><img src="static/silico_battles_logo.png" alt="Silico Battles Logo" id="icon" class="silicologo"></a>
+            </div>
+        </header>
+
+        <nav>
+            <button id="toggleButton" class="circle">
+                <div id="toggleButtonLine1"></div>
+                <div id="toggleButtonLine2"></div>
+            </button>
+            <ul class="menu">
+                <li><a href="/events">Events</a><span>&#9679;</span></li>
+                <li><a href="/team">The Backend</a><span>&#9679;</span></li>
+                <li><a href="/discord">Updates(discord)</a><span>&#9679;</span></li>
+                <li><a href="/brochure">Brochure</a><span>&#9679;</span></li>
+                <li><a href="/registeration">Registeration</a><span>&#9679;</span></li>
+                <li><a href="/message">Message from Prinicpal</a><span>&#9679;</span></li>
+            </ul>
+        </nav>
+
+        
+        <!-- Content wrapper -->
+        <div class="message-wrapper">
+            <h1 class="title">Principal's Message</h1>
+            <p class="message">
+                Since its inception, Ahlcon Public School has always curated ideas to amplify students' creativity and magnify their overall development. In this ever-evolving environment of education and technology, we proudly offer our young technoholics a technological extravaganza which endeavors to provide fillip and boost to their hidden talents. Through this platform, we strive to equip the learners with the relevant skills and competencies, such as global awareness, critical and innovative thinking.
+            </p>
+        </div>
+    </div>
+
+    <!-- Include GSAP for animation if needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+    <script src="static/message.js"></script>
+    <script>
+        window.addEventListener('mousemove', function(e) {
+            var arr = [1, 0.9, 0.8, 0.5, 0.2];
+
+            arr.forEach(function(i) {
+                var x = (1 - i) * 75;
+                var star = document.createElement('div');
+
+                star.className = 'star';
+                star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+                star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+
+                document.body.appendChild(star);
+
+                window.setTimeout(function() {
+                    document.body.removeChild(star);
+                }, Math.round(Math.random() * i * 600));
+            });
+        }, false);
+    </script>
+</body>
+</html>
