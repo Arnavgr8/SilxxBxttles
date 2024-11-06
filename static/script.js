@@ -205,12 +205,3 @@ document.body.addEventListener('click', clickEffect); // Click effect
 
 // Initial color check
 changeCursorColor();
-
-
-const video = document.getElementById('background-video');
-    
-    video.addEventListener('ended', () => {
-        // Set current time to slightly before the end of the video to hold the last frame
-        video.currentTime = video.duration - 0.1;
-        video.pause();
-});
