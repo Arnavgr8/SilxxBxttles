@@ -18,8 +18,7 @@ html {
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover;
-    /* Ensure the video covers the full screen */
+    object-fit: cover; /* Ensure the video covers the full screen */
 }
 
 /* Main content */
@@ -37,10 +36,8 @@ main.team-container {
     justify-content: center;
     gap: 5px;
     margin-bottom: 40px;
-    flex-wrap: wrap;
-    /* Allow wrapping for smaller screens */
-    justify-content: space-evenly;
-    /* Distribute items evenly */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-evenly; /* Distribute items evenly */
 }
 
 /* Team member box styling */
@@ -54,8 +51,7 @@ main.team-container {
     width: 200px;
     padding: 20px;
     transition: transform 0.3s ease;
-    margin: 10px;
-    /* Adds spacing between team members */
+    margin: 10px; /* Adds spacing between team members */
 }
 
 .team-member:hover {
@@ -83,8 +79,7 @@ main.team-container {
     cursor: none;
     color: #777;
     font-size: 1.1rem;
-    margin-top: 10px;
-    /* Adds space between the name and post */
+    margin-top: 10px; /* Adds space between the name and post */
 }
 
 /* Footer */
@@ -122,8 +117,7 @@ nav {
     cursor: none;
     height: 5rem;
     width: 5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Semi-transparent white */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent white */
     background-size: cover;
     background-position: center;
     border-radius: 5rem;
@@ -226,31 +220,24 @@ nav ul li:hover span {
     background-color: red;
     opacity: 0.5;
     position: fixed;
-    width: 15px;
-    /* Size of the cursor */
-    height: 15px;
-    /* Size of the cursor */
+    width: 15px; /* Size of the cursor */
+    height: 15px; /* Size of the cursor */
     border-radius: 50%;
-    pointer-events: none;
-    /* Prevent interaction */
-    transition: background-color 0.3s ease;
-    /* Smooth color transition */
-    z-index: 1000;
-    /* Above other elements */
+    pointer-events: none; /* Prevent interaction */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    z-index: 1000; /* Above other elements */
 }
 
 /* Body Background */
 body {
-    background-color: #2e3537;
-    /* Dark background */
+    background-color: #2e3537; /* Dark background */
 }
 
 /* Sparkles (Star Effect) */
 .star {
     position: fixed;
     pointer-events: none;
-    z-index: 9998;
-    /* Ensure stars are behind the cursor */
+    z-index: 9998; /* Ensure stars are behind the cursor */
 }
 
 .star:before,
@@ -258,20 +245,16 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    content: '\2726';
-    /* Unicode character for star */
+    content: '\2726'; /* Unicode character for star */
     font-size: 9px;
-    z-index: 9998;
-    /* Ensure stars are behind the cursor */
+    z-index: 9998; /* Ensure stars are behind the cursor */
 }
 
 .star:before {
     color: transparent;
     text-shadow:
-        0 0 5px rgba(255, 0, 0, 0.7),
-        /* Glow effect */
-        0 0 10px rgb(255, 0, 0);
-    /* Stronger glow */
+        0 0 5px rgba(255, 0, 0, 0.7), /* Glow effect */
+        0 0 10px rgb(255, 0, 0); /* Stronger glow */
 }
 
 .star:after {
@@ -279,10 +262,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 5px rgba(255, 0, 166, 0.5),
-        /* Glow effect */
-        0 0 10px rgb(255, 0, 0);
-    /* Stronger glow */
+        0 0 5px rgba(255, 0, 166, 0.5), /* Glow effect */
+        0 0 10px rgb(255, 0, 0); /* Stronger glow */
 }
 
 /* Responsive Styling for smaller screens */
@@ -290,7 +271,7 @@ body {
 /* Tablet screens (768px and below) */
 @media (max-width: 768px) {
     .row {
-        gap: 15px;  /* Slightly larger gap on tablet screens */
+        gap: 15px; /* Slightly larger gap on tablet screens */
     }
 
     .team-member {
@@ -352,7 +333,6 @@ body {
     }
 }
 
-
 /* About Section Styles */
 .about {
     text-align: center;
@@ -367,123 +347,45 @@ body {
     transform: translateY(50px); /* Slide from below */
 }
 
-/* About Section Text Styling */
+/* About Text Styling */
 .about h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.about h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 1.1rem;
-    color: #ffffff;
-    line-height: 1.8;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
     margin-bottom: 30px;
 }
 
+.about p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+}
 
-/* Header Logo as Overlay Button */
-header {
-    cursor: none;
+
+/* Logo Button positioned opposite to the nav button (top-left) */
+.header {
     position: fixed;
     top: 3vw;
     left: 3vw;
     z-index: 2;
-    width: 4rem;  /* Set size to match overlay button */
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.7; /* Slight opacity for the overlay effect */
 }
 
-.logo a {
-    cursor: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+.logo-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
 }
 
 .silicologo {
     cursor: none;
-    width: 3rem; /* Logo size */
-    height: auto;
-    opacity: 1;
+    height: 5rem;
+    width: 5rem;
+    opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Hover effect to make the logo stand out */
-.header:hover .silicologo {
-    opacity: 1; /* Make the logo fully visible on hover */
-}
-
-
-@media (max-width: 768px) {
-    /* Adjust nav button size and position */
-    nav {
-        height: 4rem;
-        width: 4rem;
-        top: 2vw;
-        right: 2vw;
-        opacity: 0.9;
-        border-radius: 3rem;
-        background-color: transparent;
-        box-shadow: none; /* Remove shadow */
-    }
-    
-    /* Adjust button and lines inside nav for smaller screens */
-    nav button {
-        height: 4rem;
-        width: 4rem;
-        border: none; /* Remove border */
-        box-shadow: none; /* Remove shadow */
-    }
-
-    nav button #toggleButtonLine1,
-    nav button #toggleButtonLine2 {
-        width: 60%;
-    }
-
-    /* Adjust menu overlay to avoid covering the entire screen */
-    nav ul {
-        visibility: hidden;
-        opacity: 0;
-        position: fixed;
-        top: 15%; /* Position slightly below the top */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%; /* Width of the nav menu */
-        height: auto; /* Auto height to fit content */
-        max-height: 60vh; /* Limit height */
-        background-color: rgba(0, 0, 0, 0.9);
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1rem;
-        border-radius: 10px; /* Optional: Rounded corners */
-        z-index: 3;
-        transition: opacity 0.3s ease;
-    }
-
-    /* Adjust font size for menu items */
-    nav ul li {
-        font-size: 1.2rem; /* Smaller font for mobile */
-    }
-
-    /* Adjust padding for logo and other elements */
-    .logo {
-        width: 4rem;
-        height: 4rem;
-    }
+.logo-button:hover .silicologo {
+    opacity: 1;
 }
