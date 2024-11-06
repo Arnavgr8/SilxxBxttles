@@ -30,8 +30,25 @@
 </head>
 <body>
     
+    <!-- Fullscreen Button -->
+    <button class="fullscreen-button" onclick="toggleFullscreen()">Fullscreen</button>
+
     <iframe src="https://drive.google.com/file/d/1sh0FYEuwfjnsdu3lNrBFkRwaasKY-c1Z/preview" id="pdf-frame"></iframe>
 
-
+    <script>
+        // Function to toggle fullscreen mode
+        function toggleFullscreen() {
+            var iframe = document.getElementById("pdf-frame");
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome and Safari
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
