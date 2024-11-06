@@ -1,5 +1,6 @@
 /* Reset body margins and set full-height background */
 body, html {
+    cursor : none;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -9,6 +10,7 @@ body, html {
 
 /* Fullscreen background image */
 .img-background {
+	    cursor : none;
             position: absolute;
             top: 0;
             left: 0;
@@ -20,6 +22,7 @@ body, html {
 
 /* Content wrapper styling */
 .message-wrapper {
+    cursor : none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,6 +39,7 @@ body, html {
 
 /* Title style */
 .title {
+    cursor : none;
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: bold;
@@ -43,6 +47,7 @@ body, html {
 
 /* Message text style */
 .message {
+    cursor : none;
     font-size: 1.25rem;
     line-height: 1.6;
     font-weight: 1000;
@@ -122,6 +127,7 @@ body, html {
 
 
 .header {
+    cursor : none;
     position: fixed;
     top: 3vw;
     left: 3vw;
@@ -129,6 +135,7 @@ body, html {
 }
 
 .logo {
+    cursor : none;
     width: 5rem; /* Set similar dimensions to nav button */
     height: 5rem;
     display: flex;
