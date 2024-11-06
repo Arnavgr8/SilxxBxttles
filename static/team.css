@@ -390,36 +390,43 @@ body {
 }
 
 
-/* Header overlay container */
+/* Header Logo as Overlay Button */
 .header {
+    cursor: none;
     position: fixed;
     top: 3vw;
     left: 3vw;
     z-index: 2;
-    cursor: none;
-}
-
-/* Logo styling within the overlay */
-.logo {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;  /* Set size to match overlay button */
+    height: 4rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    opacity: 0.6;
-    cursor: pointer;
+    align-items: center;
+    opacity: 0.7; /* Slight opacity for the overlay effect */
 }
 
 .logo a {
+    cursor: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .silicologo {
-    width: 3rem;
+    cursor: none;
+    width: 3rem; /* Logo size */
     height: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
+
+/* Hover effect to make the logo stand out */
+.header:hover .silicologo {
+    opacity: 1; /* Make the logo fully visible on hover */
+}
+
 
 @media (max-width: 768px) {
     /* Adjust nav button size and position */
