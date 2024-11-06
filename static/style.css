@@ -31,29 +31,46 @@ html, body {
     min-height: 100vh; /* Full height for the first page */
 }
 
-.header, .footer {
+.footer {
     cursor : none;
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 2cm;
     z-index: 1; /* Keep nav and footer above canvas */
-}
-
-.footer {
     cursor : none;
     position: absolute;
     bottom: -70px;
 }
 
-.logo a {
-    top: 0;
-    left: 20%;
-    cursor : none;
-    font-family: "Proxy_Mono_Beta";
-    text-transform: uppercase;
-    color: white;
+.header {
+    position: fixed;
+    top: 3vw;
+    left: 3vw;
+    z-index: 2;
 }
+
+.logo {
+    width: 5rem; /* Set similar dimensions to nav button */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.silicologo {
+    width: 3rem; /* Adjust logo size inside the container */
+    height: auto;
+}
+
+
 
 nav {
     cursor : none;
@@ -157,34 +174,36 @@ nav ul li:hover span {
     cursor : none;
     scale: 1;
 }
-
 .site-content {
-    cursor : none;
+    cursor: none;
     position: absolute;
-    z-index: 1; /* Ensure content is above the video */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Ensure content is above other elements like background */
+    text-align: center;
 }
 
 .info {
-    cursor : none;
-    width: 100%;
-    position: relative;
-    top: 50%;
-    left: 120%; /* Centered the info section */
-    transform: translateX(-50%);
+    cursor: none;
     text-align: center;
 }
 
 .info h1 {
-    cursor : none;
+    cursor: none;
     font-size: 8vw;
     font-family: "Audiowide";
     text-transform: uppercase;
     font-weight: 400;
-    color: white;  
+    color: white;
 }
 
 .info p {
-    cursor : none;
+    cursor: none;
     font-family: "Unlock";
     font-size: 2vw;
     margin: 0.5cm 0;
@@ -238,10 +257,5 @@ body {
 #icon {
     cursor : none;
     opacity: 0.35;
-}
-
-.silicologo {
-    width: 3rem;
-    height: 3rem;
 }
 
