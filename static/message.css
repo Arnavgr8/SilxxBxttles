@@ -127,6 +127,7 @@ body, html {
 
 
 .header {
+    cursor: none;
     position: fixed;
     top: 3vw;
     left: 3vw;
@@ -134,6 +135,7 @@ body, html {
 }
 
 .logo {
+    cursor: none;
     width: 5rem; /* Set similar dimensions to nav button */
     height: 5rem;
     display: flex;
@@ -143,12 +145,14 @@ body, html {
 }
 
 .logo a {
+    cursor: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .silicologo {
+    cursor: none;
     width: 3rem; /* Adjust logo size inside the container */
     height: auto;
 }
