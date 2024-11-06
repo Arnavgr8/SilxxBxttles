@@ -10,7 +10,7 @@ body, html {
 
 /* Fullscreen background image */
 .img-background {
-	    cursor : none;
+    cursor : none;
             position: absolute;
             top: 0;
             left: 0;
@@ -127,7 +127,6 @@ body, html {
 
 
 .header {
-    cursor : none;
     position: fixed;
     top: 3vw;
     left: 3vw;
@@ -135,7 +134,6 @@ body, html {
 }
 
 .logo {
-    cursor : none;
     width: 5rem; /* Set similar dimensions to nav button */
     height: 5rem;
     display: flex;
@@ -259,4 +257,3 @@ nav ul li:hover span {
     cursor : none;
     scale: 1;
 }
-        
