@@ -77,3 +77,179 @@ body, html {
         font-size: 0.875rem;
     }
 }
+
+#cursor {
+    background-color: red;
+    opacity: 0.5 ;
+    position: fixed;
+    width: 15px; /* Size of the cursor */
+    height: 15px; /* Size of the cursor */
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interaction */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    z-index: 1000; /* Above other elements */
+}
+
+
+.star {
+	position: fixed;
+	pointer-events: none;
+}
+
+.star:before, .star:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '\2726';
+	font-size: 9px;
+}
+
+.star:before {
+	color: transparent;
+	text-shadow: 
+		0 0 5px rgba(255, 0, 0, 0.7), /* Glow effect */
+		0 0 10px rgb(255, 0, 0); /* Stronger glow */
+}
+
+.star:after {
+	background: linear-gradient(45deg,  rgba(255, 0, 242, 0.5),  rgba(255, 0, 225, 0.5));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 
+		0 0 5px  rgba(255, 0, 166, 0.5), /* Glow effect */
+		0 0 10px rgb(255, 0, 0) /* Stronger glow */
+}
+
+
+.header {
+    position: fixed;
+    top: 3vw;
+    left: 3vw;
+    z-index: 2;
+}
+
+.logo {
+    width: 5rem; /* Set similar dimensions to nav button */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.silicologo {
+    width: 3rem; /* Adjust logo size inside the container */
+    height: auto;
+}
+
+
+
+nav {
+    cursor : none;
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent white */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5rem;
+    position: fixed;
+    top: 3vw;
+    right: 3vw;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.6;
+}
+
+
+nav button {
+    cursor : none;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 5rem;
+    border: 0;
+    outline: 0;
+    background-color: rgba(0, 255, 247, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav button #toggleButtonLine1,
+nav button #toggleButtonLine2 {
+    cursor : none;
+    content: "";
+    border: 1px solid black;
+    width: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+}
+
+nav button #toggleButtonLine1 {
+    cursor : none;
+    top: 42.5%;
+    left: 50%;
+}
+
+nav button #toggleButtonLine2 {
+    cursor : none;
+    top: 57.5%;
+    left: 50%;
+}
+
+nav ul {
+    cursor : none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2vh;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav ul li {
+    cursor : none;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Unlock";
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li span {
+    cursor : none;
+    display: inline-block;
+    scale: 0;
+    transition: all 200ms ease;
+}
+
+nav ul li a {
+    cursor : none;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    cursor : none;
+    font-weight: 1000;
+}
+
+nav ul li:hover span {
+    cursor : none;
+    scale: 1;
+}
+        
