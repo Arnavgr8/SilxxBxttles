@@ -362,8 +362,8 @@ body {
 }
 
 
-
 .header {
+    cursor: none;
     position: fixed;
     top: 3vw;
     left: 3vw;
@@ -371,6 +371,7 @@ body {
 }
 
 .logo {
+    cursor: none;
     width: 5rem; /* Set similar dimensions to nav button */
     height: 5rem;
     display: flex;
@@ -380,15 +381,16 @@ body {
 }
 
 .logo a {
-    width: 5rem; /* Set similar dimensions to nav button */
-    height: 5rem;
+    cursor: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .silicologo {
-    width: 5rem; /* Set similar dimensions to nav button */
-    height: 5rem;
+    cursor: none;
+    width: 3rem; /* Adjust logo size inside the container */
     height: auto;
 }
+
+
