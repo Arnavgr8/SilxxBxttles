@@ -322,3 +322,10 @@ nav ul li:hover span {
         height: 4rem;
     }
 }
+
+
+@media (max-width: 768px) {
+    #cursor {
+        display: none;
+    }
+}
